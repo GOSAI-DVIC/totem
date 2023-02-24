@@ -1,0 +1,14 @@
+{
+    "name" : "<Platform Name (properly cased)>",
+    "camera": {
+        "number":0,
+        "type" : "standard",
+        "width": 1920,
+        "height": 1080,
+        "flip": false
+    },
+    "applications": {
+        "startup": ["<application(s)_name_on_start>"],
+        "disabled": []
+    }
+}
