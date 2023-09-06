@@ -14,7 +14,7 @@ export const template_sm_app = new p5((sketch) => {
 
     sketch.set = (width, height, socket) => {
         sketch.selfCanvas = sketch
-            .createCanvas(width, height, sketch.WEBGL)
+            .createCanvas(width, height)//, sketch.WEBGL) if you want to make 3d using p5 WEBGL
             .position(0, 0);
         sketch.activated = true;
         // Set up your app here
