@@ -1,0 +1,10 @@
+.vscode/
+__pycache__/
+.venv*
+home/
+home
+venv/
+lib64/
+lib/
+*.pyc
+*.log
