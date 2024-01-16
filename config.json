@@ -3,9 +3,10 @@
     "camera": {
         "number":0,
         "type" : "standard",
-        "width": 1920,
-        "height": 1080,
-        "flip": true
+        "width": 1280,
+        "height": 720,
+        "flip": true,
+        "rotation": 90
     },
     "applications": {
         "startup": ["totem_app"],
