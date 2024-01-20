@@ -8,4 +8,3 @@ lib64/
 lib/
 *.pyc
 *.log
-scripts/vox-cpk.pth.tar
