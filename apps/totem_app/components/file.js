@@ -13,7 +13,7 @@ export class ImageLoader {
         this.centerY = 50;
         this.minsize = 1;
         this.maxsize = 200;
-        this.border = 2;
+        this.border = 4;
         // click logic
         this.isholding = false;
         this.oldAngle = 0;

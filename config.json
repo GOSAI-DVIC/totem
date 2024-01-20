@@ -3,13 +3,13 @@
     "camera": {
         "number":0,
         "type" : "standard",
-        "width": 1280,
-        "height": 720,
+        "width": 640,
+        "height": 480,
         "flip": true,
         "rotation": 90
     },
     "applications": {
-        "startup": ["totem_app"],
+        "startup": ["app_toggler", "sdxl_app"],
         "disabled": []
     }
 }
