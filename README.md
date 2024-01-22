@@ -25,21 +25,20 @@ Please refer to the [GOSAI](https://github.com/GOSAI-DVIC/gosai) tutorial for in
 
 1. clone the repo at the totem branch 
 
-    git clone -b Nstas/totem-dev https://github.com/GOSAI-DVIC/gosai.git
+        git clone -b Nstas/totem-dev https://github.com/GOSAI-DVIC/gosai.git
 
 2. clone the platform repo and rename it to home
 
-    cd gosai
-
-    git clone https://github.com/GOSAI-DVIC/totem.git home
+        cd gosai
+        git clone https://github.com/GOSAI-DVIC/totem.git home
 
 3. install the dependencies
     
-    make install
+        make install
     
 4. run the demo
 
-    make stop && make boot
+        make stop && make boot
 
 ## Launch
 
