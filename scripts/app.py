@@ -14,6 +14,7 @@ source = None
 
 model_path = './vox-cpk.pth.tar'
 config_path = './config/vox-256.yaml'
+path_root_2 = "./home/scripts/"
 
 def extract_bbox(frame, fa):
     if max(frame.shape[0], frame.shape[1]) > 640:
@@ -96,6 +97,17 @@ if __name__ == '__main__':
     source_image = cv2.resize(source_image, (256, 256))
     source_image = np.array(source_image, dtype=np.float32)/255.0
     source = torch.from_numpy(source_image).unsqueeze(0).permute(0, 3, 1, 2).cuda()
+    #  before loading the model, we need to check wich config file is used
+    #  try to open first the config file in the current directory
+    #  if it fails, open the default config file
+    try:
+        f = open(config_path)
+        f.close()
+    except Exception as e:
+        print("Error opening config file: ", e)
+        print("Using default config file", path_root_2+config_path)
+        config_path = path_root_2+config_path
+        model_path = path_root_2+model_path
     # model loading
     generator, kp_detector = demo.load_checkpoints(config_path=config_path, checkpoint_path=model_path)
     kp_source = kp_detector(source)

@@ -17,7 +17,7 @@ This app uses sdxl turbo by stability.ai to generate art. It uses the gosai app 
 
 Please refer to the [GOSAI](https://github.com/GOSAI-DVIC/gosai) tutorial for installation.
 
-**! Note ! :** This platform has specific drivers that are only available on teh branch ```Nstas/togtem-dev```. Can be found [here](https://github.com/GOSAI-DVIC/gosai/tree/Nstas/totem-dev).
+**! Note ! :** This platform has specific drivers that are only available on teh branch ```Nstas/totem-dev```. Can be found [here](https://github.com/GOSAI-DVIC/gosai/tree/Nstas/totem-dev).
 
 ## Launch
 
