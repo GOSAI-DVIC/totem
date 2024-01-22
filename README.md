@@ -25,4 +25,10 @@ Please refer to the [GOSAI](https://github.com/GOSAI-DVIC/gosai) tutorial for in
 
 Simply enter `make stop && make boot` on the terminal
 
-The sdxl enpoitn needs to be manually launched on the dgx.
+The sdxl enpoitn needs to be manually launched on the dgx:
+    
+```bash
+cd /home/nstas/5A/sdxl/here/here/sdxlTurboEndpoint
+conda activate quick
+python3 app.py
+```
