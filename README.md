@@ -4,6 +4,8 @@
 
 The totem platform currently has 2 apps: **RealTime Deep Fake**, **sdxl art**.
 
+[**DEMO HERE**](https://youtu.be/sSzMhEjYnTs)
+
 ### RealTime Deep Fake
 
 This app is a real time deep fake app. It uses a pre-trained model, called first-order motion, to detect faces and control them with a the camera.

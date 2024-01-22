@@ -107,7 +107,6 @@ export const totem_app = new p5((sketch) => {
         sketch.clear();
         //Draw here
         imgLoader.display(sketch);
-        pointer.display(sketch);
         if (receivedImage) {
             sketch.image(receivedImage, sketch.width/2 - 256, sketch.height/4 -256, 512, 512);
             // console.log(receivedImage);
@@ -116,5 +115,6 @@ export const totem_app = new p5((sketch) => {
             sketch.image(receivedImage2, sketch.width/2 - 256, sketch.height/4 +512, 512, 512);
             // console.log(receivedImage);
         }
+        pointer.display(sketch);
     };
 });
