@@ -91,6 +91,7 @@ if __name__ == '__main__':
     # camera notification subscriber, 'name_event'
     ps = db.pubsub()
     ps.subscribe("camera_color")
+    fail_counter=0
 
     #  load source image
     source_image = cv2.imread(path_root+last_path)
@@ -186,7 +187,12 @@ if __name__ == '__main__':
                             last_time = now
                             counter=0
             except Exception as e:
+                fail_counter+=1
                 print("Error in main loop: ", e)
+                print("fail counter is ", fail_counter)
+                if fail_counter>10:
+                    print("Too many fails, exiting")
+                    exit(42)
                 time.sleep(1)
                 continue
                 

@@ -19,16 +19,36 @@ This app uses sdxl turbo by stability.ai to generate art. It uses the gosai app 
 
 Please refer to the [GOSAI](https://github.com/GOSAI-DVIC/gosai) tutorial for installation.
 
-**! Note ! :** This platform has specific drivers that are only available on teh branch ```Nstas/totem-dev```. Can be found [here](https://github.com/GOSAI-DVIC/gosai/tree/Nstas/totem-dev).
+**! Note ! :** This platform has specific drivers that are only available on the branch ```Nstas/totem-dev```. Can be found [here](https://github.com/GOSAI-DVIC/gosai/tree/Nstas/totem-dev).
+
+### from scratch
+
+1. clone the repo at the totem branch 
+
+    git clone -b Nstas/totem-dev https://github.com/GOSAI-DVIC/gosai.git
+
+2. clone the platform repo and rename it to home
+
+    cd gosai
+
+    git clone https://github.com/GOSAI-DVIC/totem.git home
+
+3. install the dependencies
+    
+    make install
+    
+4. run the demo
+
+    make stop && make boot
 
 ## Launch
 
-Simply enter `make stop && make boot` on the terminal
+If you are startign the app on the totem platform:
+1. ```ctr+alt+T```: to open teh terminal 
+2. ```./start_totem_demo.sh```: to start the demo !!
 
-The sdxl enpoitn needs to be manually launched on the dgx:
-    
-```bash
-cd /home/nstas/5A/sdxl/here/here/sdxlTurboEndpoint
-conda activate quick
-python3 app.py
-```
+If you are starting the app on your own machine:
+
+1. ```ctr+alt+T```: to open a terminal
+2. ```cd /path/to/gosai```: to go to the gosai root directory
+3. ```make stop && make boot```: to launch the gosai demo

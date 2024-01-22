@@ -9,7 +9,7 @@
         "rotation": 90
     },
     "applications": {
-        "startup": ["app_toggler", "sdxl_app"],
+        "startup": ["app_toggler", "totem_app"],
         "disabled": []
     }
 }
