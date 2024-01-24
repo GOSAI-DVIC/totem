@@ -65,7 +65,7 @@ export const totem_app = new p5((sketch) => {
     };
 
     sketch.resume = () => {
-        socket.emit("totem_get_images"); 
+        sketch.socket.emit("totem_get_images"); 
     };
     sketch.pause = () => {};
     sketch.update = () => {

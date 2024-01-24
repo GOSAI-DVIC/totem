@@ -23,6 +23,8 @@ export class ImageLoader {
 
     // load each image in assets
     preload(image_paths) {
+        this.paths = [];
+        this.images = [];
         for (let i = 0; i < image_paths.length; i++) {
             let img = loadImage("./platform/home/apps/totem_app/images/"+image_paths[i]);
             this.images.push(img);

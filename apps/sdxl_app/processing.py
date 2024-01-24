@@ -23,9 +23,9 @@ class Application(BaseApplication):
             output = data["output"].split(",")[1]
             decoded_input_ = base64.b64decode(input_)
             decoded_output = base64.b64decode(output)
-            Image.open(io.BytesIO(decoded_input_)).save("~/nico/gosai/home/apps/sdxl_app/inputs/test.png")
-            Image.open(io.BytesIO(decoded_output)).save("~/nico/gosai/home/apps/sdxl_app/outputs/test.png")
-            Image.open(io.BytesIO(decoded_output)).save("~/nico/gosai/home/apps/totem_app/images/test.png") #! this is a hack to make the totem app work
+            Image.open(io.BytesIO(decoded_input_)).save("/home/cortega/nico/gosai/home/apps/sdxl_app/inputs/test.png")
+            Image.open(io.BytesIO(decoded_output)).save("/home/cortega/nico/gosai/home/apps/sdxl_app/outputs/test.png")
+            Image.open(io.BytesIO(decoded_output)).save("/home/cortega/nico/gosai/home/apps/totem_app/images/test.png") #! this is a hack to make the totem app work
 
         @self.server.sio.on("sdxl_paint")
         def paint(data):
