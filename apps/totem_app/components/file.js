@@ -28,7 +28,7 @@ export class ImageLoader {
             this.images.push(img);
             this.paths.push(image_paths[i]);
         }
-        // if less than 20 images, repeat the images
+        // if less than 20 images, repeat the images because otherwise logic breaks
         if (this.images.length < 20) {
             let length = this.images.length;
             for (let i = 1; i < length; i++) {
@@ -50,7 +50,6 @@ export class ImageLoader {
         for (let i = 0; i < this.angles.length; i++) {
             this.angles[i] = this.angles[i]% TWO_PI;
         }
-
         // build sizes according to the angle 
         let sizes = [];
         let visible = [];
@@ -73,8 +72,6 @@ export class ImageLoader {
         for (let i = 0; i < this.images.length; i++) {
             if (visible[i]) {
                 let x = this.centerX;
-                // let y = width/2 + sin(this.angles[i]) * 200;
-                // let y = map(sin(this.angles[i] - this.currentAngle), -1, 1, 0, height/2);
                 let y = sketch.height/2 - this.maxsize/2 + cos(this.angles[i] - this.currentAngle +this.constantAngle) * sketch.height/2;
                 // change color 
                 if (i == maxIndex) {
@@ -112,7 +109,6 @@ export class ImageLoader {
     }
 
     onReleased(x,y) {
-        // if the mouse is within the gallery
         this.isholding = false;
     }
     onPressed(x,y) {

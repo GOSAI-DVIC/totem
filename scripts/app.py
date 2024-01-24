@@ -63,8 +63,6 @@ def process_frame(frame, fa):
         bbox = (middle_width - width/2, middle_height - height/2, middle_width + width/2, middle_height + height/2)
         if prev_bbox == None:
             prev_bbox = bbox
-        # lowpass the bbox aspect ratio
-        # if total distance less than 
         center_old = ((prev_bbox[0] + prev_bbox[2]) / 2, (prev_bbox[1] + prev_bbox[3]) / 2)
         center_new = ((bbox[0] + bbox[2]) / 2, (bbox[1] + bbox[3]) / 2)
         if (abs(center_new[0] - center_old[0]) + abs(center_new[1] - center_old[1])) < 30:
@@ -74,8 +72,6 @@ def process_frame(frame, fa):
         # print(alpha)
         beta = 1-alpha
         prev_bbox = (prev_bbox[0] * alpha + bbox[0] * beta, prev_bbox[1] * alpha + bbox[1] * beta, prev_bbox[2] * alpha + bbox[2] * beta, prev_bbox[3] * alpha + bbox[3] * beta)
-        # top_left = (int(bbox[0]), int(bbox[1]))
-        # bottom_right = (int(bbox[2]), int(bbox[3]))
         frame = frame[int(prev_bbox[1]):int(prev_bbox[3]), int(prev_bbox[0]):int(prev_bbox[2])]
         # check frame size
         if frame.shape[0] < 32 or frame.shape[1] < 32:
@@ -98,9 +94,6 @@ if __name__ == '__main__':
     source_image = cv2.resize(source_image, (256, 256))
     source_image = np.array(source_image, dtype=np.float32)/255.0
     source = torch.from_numpy(source_image).unsqueeze(0).permute(0, 3, 1, 2).cuda()
-    #  before loading the model, we need to check wich config file is used
-    #  try to open first the config file in the current directory
-    #  if it fails, open the default config file
     try:
         f = open(config_path)
         f.close()
@@ -136,9 +129,7 @@ if __name__ == '__main__':
                             source_image = np.array(source_image, dtype=np.float32)/255.0
                             source = torch.from_numpy(source_image).unsqueeze(0).permute(0, 3, 1, 2).cuda()
                             kp_source = kp_detector(source)
-                            # print("new image:", source_image)
                     # get the frame from the camera
-                    # frame = camera_message["data"]
                     try:
                         msg = pickle.loads(bytes(camera_message['data']))
                     except pickle.UnpicklingError as e:
@@ -149,7 +140,6 @@ if __name__ == '__main__':
                     # print("delta is ",delta)s
                     if delta>0.1:
                         continue
-                    # print(np.array(frame).shape)
                     #  rotate and flip frame
                     frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
                     frame = cv2.flip(frame, 1)
@@ -179,9 +169,8 @@ if __name__ == '__main__':
                         data = pickle.dumps({"data":out, "emit_time":time.time()})
                         db.set("totem_out_image", data)
                         db.publish("totem_out_image", data)
-                        # print("publisged a frame")
                         counter+=1
-                        if counter%100==0:
+                        if counter%1000==0:
                             now = time.time()
                             print("FPS: ", counter / (now - last_time))
                             last_time = now

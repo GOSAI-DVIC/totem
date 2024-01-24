@@ -7,7 +7,7 @@ import base64
 import numpy as np
 
 class Application(BaseApplication):
-    """app_toggle"""
+    """app_toggler to switch between deep fake and sdxl app"""
 
     def __init__(self, name, hal, server, manager):
         super().__init__(name, hal, server, manager)

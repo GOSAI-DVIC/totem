@@ -2,25 +2,11 @@ import {
     TorchPointer
 } from "./components/pointer.js";
 
-import {
-    Button
-} from "./components/button.js";
 
 import {
     Toggle
 } from "./components/toggle.js";
 
-import {
-    ColorPicker
-} from "./components/colorPicker.js";
-
-import {
-    imageHolder
-} from "./components/imageholder.js";
-
-import {
-    TextInput
-} from "./components/textInput.js";
 
 
 export const app_toggler = new p5((sketch) => {
@@ -45,8 +31,6 @@ export const app_toggler = new p5((sketch) => {
             .style("z-index", sketch.z_index);
 
         socket.on(sketch.name, (payload) => {
-            // console.log(data);
-
             let data = payload["data"];
             let type = payload["type"];
             if (type == "hand_pose") {
@@ -68,11 +52,9 @@ export const app_toggler = new p5((sketch) => {
                     pointer.updateHandData(hand_pose, hands_sign[index]);
                 });
 
-
                 if (pointers.length < hands_position.length) {
                     for (let i = pointers.length; i < hands_position.length; i++) {
                         let pointer = new TorchPointer(sketch.defaultPointerStyle);
-                        // console.log("here");
                         let hand_pose = hands_position[i].map((point) => {
                             return  [-0.3 + point[0] * width/0.7, -0.3 + point[1] * height/0.7];
                         });
@@ -86,7 +68,6 @@ export const app_toggler = new p5((sketch) => {
 
         app_toggle = new Toggle(width/2 , 80 , 600, 100, "switch app", sketch.color("hsl(360, 100%, 100%)"));
         app_toggle.setOnClick(() => {
-            // console.log("hello");
             const last_app_name = available_apps[current_app];
             current_app = (current_app + 1) % available_apps.length;
             const new_app_name = available_apps[current_app];
@@ -128,9 +109,6 @@ export const app_toggler = new p5((sketch) => {
     sketch.show = () => {
         sketch.clear();
         app_toggle.display(sketch);
-        // pointers.forEach((pointer) => {
-        //     pointer.display(sketch);
-        // });
     };
 
 

@@ -1,6 +1,7 @@
 import { Button } from "./button.js";
 
 export class TextInput {
+    // A text input field that can be used to input text;
     constructor(x, y, w, h, defaultText) {
         this.x = x;
         this.y = y;
@@ -88,6 +89,7 @@ export class TextInput {
 
 
 export class Keyboard {
+    // A keyboard that can be used to input text;
     constructor(x, y, inputField) {
         this.x = x;
         this.y = y;
@@ -135,9 +137,6 @@ export class Keyboard {
         sketch.stroke(0);
         sketch.strokeWeight(3);
         sketch.rect(this.x + 10*this.xOffset, this.y - this.yOffset, 12 * this.keyWidth - this.xOffset*5, 5 * this.keyWidth + 10, 20);
-        // sketch.noStroke();
-        // sketch.rect(this.x, this.y, 500, 300);
-
         // Draw the keyboard
         for (let key of this.keys) {
             key.display(sketch);
@@ -145,11 +144,8 @@ export class Keyboard {
     }
 
     update(pointer) {
-        // console.log(pointer);
-        // if (!this.inputField.isSelected) return;
         for (let key of this.keys) {
             key.update(pointer);
-            // console.log(key.onClick);
         }
     }
 }

@@ -19,6 +19,12 @@ It uses the gosai app "totem_app" and teh script "app.py" to run. The script req
 
 This app uses sdxl turbo by stability.ai to generate art. It uses the gosai app "totem_app" and the script "sdxl_api". The sdxl turbo model requires 9 GB of Vram and thus runs on the dgx. The sdxl endpoint can be found [here](https://github.com/COLVERTYETY/sdxlTurboEndpoint).
 
+## hardware requirements
+
+- the deep fake app requires <2GB of Vram and can run on the totem platform
+
+- the sdxl art app requires 9GB of Vram and can only run on the dgx
+
 ## installation
 
 Please refer to the [GOSAI](https://github.com/GOSAI-DVIC/gosai) tutorial for installation.

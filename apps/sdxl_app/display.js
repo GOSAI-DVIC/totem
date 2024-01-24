@@ -59,8 +59,6 @@ export const sdxl_app = new p5((sketch) => {
     sketch.mode = 1;
     sketch.currentCornerIndex = 3;
     sketch.processing = false;
-
-    // let processButton;
     let drawToggle;
     let eraseToggle;
     let clearButton;
@@ -68,9 +66,6 @@ export const sdxl_app = new p5((sketch) => {
     let textinput;
     let colorPicker;
     let imageholder;
-    // 0: Select the area of interest
-    // 1: Display the GUI
-    // 2: Hide everything to take a photo
 
     let corners = [[sketch.width/4, sketch.height/4], [sketch.width*3/4, sketch.height/4], [sketch.width*3/4, sketch.height*3/4], [sketch.width/4, sketch.height*3/4]];
     
@@ -83,8 +78,6 @@ export const sdxl_app = new p5((sketch) => {
             .style("z-index", sketch.z_index);
 
         socket.on(sketch.name, (payload) => {
-            // console.log(data);
-
             let data = payload["data"];
             let type = payload["type"];
             if (type == "hand_pose") {
@@ -130,7 +123,6 @@ export const sdxl_app = new p5((sketch) => {
         sketch.intervalId = setInterval(() => {
             let img = paintingArea.getImg();
             let prompt = textinput.text;
-            // console.log("sending", img);
             sketch.socket.emit("sdxl_paint", {
                 "img": img,
                 "prompt": prompt
