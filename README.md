@@ -6,7 +6,9 @@
 
 The totem platform currently has 2 apps: **RealTime Deep Fake**, **sdxl art**.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sSzMhEjYnTs?si=nuitY2r3Y-i-M7Xc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+[![Demo video](https://img.youtube.com/vi/sSzMhEjYnTs/0.jpg)](https://www.youtube.com/watch?v=sSzMhEjYnTs)
+
+Click on previous image for demo video.
 
 ### RealTime Deep Fake
 
