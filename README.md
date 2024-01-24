@@ -31,7 +31,11 @@ Please refer to the [GOSAI](https://github.com/GOSAI-DVIC/gosai) tutorial for in
 
 **! Note ! :** This platform has specific drivers that are only available on the branch ```Nstas/totem-dev```. Can be found [here](https://github.com/GOSAI-DVIC/gosai/tree/Nstas/totem-dev).
 
+The external dependencies for the totem platform are: **Docker** and **Conda**.
+
 ### from scratch
+
+The installation process is tested for buntu 20+.
 
 1. clone the repo at the totem branch 
 
