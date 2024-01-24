@@ -1,10 +1,12 @@
 # Totem platform
 
+![totem](./totemBanner2.png)
+
 ## Overview
 
 The totem platform currently has 2 apps: **RealTime Deep Fake**, **sdxl art**.
 
-[**DEMO HERE**](https://youtu.be/sSzMhEjYnTs)
+https://youtu.be/sSzMhEjYnTs
 
 ### RealTime Deep Fake
 
